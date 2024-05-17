@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" th:fragment="parent(content)" class="light" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" th:fragment="parent(content , title , script)" class="light" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home page</title>
+    <title data-th-replace="${title}">Home page</title>
     <link rel="stylesheet" data-th-href="@{'/css/output.css'}">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
 </head>
@@ -26,7 +26,6 @@
             </div>
         </div>
 
-
     </div>
 
 
@@ -35,6 +34,7 @@
 
 
 
+    <th:block data-th-replace="${script}"></th:block>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 
